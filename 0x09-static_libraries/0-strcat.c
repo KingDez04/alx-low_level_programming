@@ -1,26 +1,27 @@
 #include "main.h"
 
 /**
- * _strcat - concat 2 string
- * @dest:char
- * @src:char
- * Return:char
+ * _strcat - concantenates two strings
+ * @dest: pointer to be checked
+ * @src: pointer to be checked
+ *
+ * Return: a pointer to the resulting string 
  */
 char *_strcat(char *dest, char *src)
 {
-	char *s = dest;
+	int test = 0, test2 = 0;
 
-	while (*dest != '\0')
+	while (dest[test] != '\0')
 	{
-		dest++;
+		test++;
 	}
+	while (src[test2] != '\0')
+	{
+		dest[test] = src[test2];
+		test2++;
+		test++;
+	}
+	dest[test] = '\0';
 
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (s);
+	return (dest);
 }
